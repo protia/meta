@@ -1,14 +1,14 @@
 
 # Build Sequence
 
-## (I) Pre-build: Build Systema (on UNIX only)
+## I. Pre-build: Build Systema (on UNIX only)
 
 You need to build Systema and install it on UNIX before
 you go. This step is not needed if you are compiling
 Protia from inside Protia itself, as Protia already
 contains a Systema compiler.
 
-## (II) Build the System
+## II. Build the System
 
 ### 1. Introduction to the package system
 
@@ -134,6 +134,7 @@ Each package in Protia provides a "RECIPE.???" file that specifies:
 
 The following list provides package ordering and the (run-time) dependency graph:
 
+```
  * Base/Structs
  * Base/ServMan      --> Base/Structs
  * Base/MemMan       --> Base/Structs, Base/ServMan
@@ -155,8 +156,9 @@ The following list provides package ordering and the (run-time) dependency graph
  * Systema/Loader    --> Base/ServMan, Base/MemMan, Base/FileMan
  * Systema/Builder   --> Base/ServMan, Base/MemMan, Base/FileMan
  * Boot/Loader       --> Base/ServMan, Systema/Linker
+```
 
-## (III) Automating the build
+## III. Automating the build
 
 We provide a builder repo to automate the build process of Protia.
 build.sh is provided (to be run from UNIX) and RECIPE.??? is provided
